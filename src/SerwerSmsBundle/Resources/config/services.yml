@@ -1,0 +1,15 @@
+parameters:
+    qbitz_serwer_sms.client.class: 'Qbitz\SerwerSmsBundle\SerwerSms\SerwerSmsClient'
+    qbitz_serwer_sms.url:      ~
+    qbitz_serwer_sms.login:    ~
+    qbitz_serwer_sms.password: ~
+    qbitz_serwer_sms.test:     ~
+
+services:
+    qbitz_serwer_sms.client:
+        class: %qbitz_serwer_sms.client.class%
+        arguments:
+            - '%qbitz_serwer_sms.url%'
+            - '%qbitz_serwer_sms.login%'
+            - '%qbitz_serwer_sms.password%'
+            - '%qbitz_serwer_sms.test%'
