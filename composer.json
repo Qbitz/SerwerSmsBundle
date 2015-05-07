@@ -1,5 +1,5 @@
 {
-    "name": "qbitz/dpdbundle",
+    "name": "qbitz/serwersmsbundle",
     "description": "Symfony2 and SmsSerwer.pl integration",
     "keywords": ["smsserwer.pl"],
     "homepage": "https://github.com/Qbitz/SerwerSmsBundle",
