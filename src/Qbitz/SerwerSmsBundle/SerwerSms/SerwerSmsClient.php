@@ -44,7 +44,19 @@ class SerwerSmsClient {
         $log = '';
         if (isset($xml->Odbiorcy->Niewyslane)) {
             foreach($xml->Odbiorcy->Niewyslane->SMS as $sms) {
-                $log .= 'smserror '.\xml_attribute($sms, 'numer').' ; '.\xml_attribute($sms, 'przyczyna')."\n";
+                $numer = '';
+                $przyczyna = '';
+
+                foreach($sms->attributes() as $name => $attr) {
+                    if($name=='numer') {
+                        $numer = $attr;
+                    }
+                    if($name=='przyczyna') {
+                        $przyczyna = $attr;
+                    }
+                }
+
+                $log .= 'smserror '.$numer.' ; '.$przyczyna."\n";
             }
         }
 
