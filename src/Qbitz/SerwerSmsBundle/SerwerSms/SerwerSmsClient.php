@@ -31,7 +31,7 @@ class SerwerSmsClient {
 
         $dom = new \DomDocument;
         $dom->loadXML($resp->getContent());
-        $xml = simplexml_import_dom($dom);
+        $xml = \simplexml_import_dom($dom);
 
         if (isset($xml->Blad)) {
             return 'smserror '.$phoneNumber.' ; '.$xml->Blad."\n";
